@@ -4,3 +4,4 @@ Comparison between multiple js object validators
 ## Current validators
 - Superstruct: https://www.npmjs.com/package/superstruct
 - Validate: https://www.npmjs.com/package/validate
+- JsonSchema: https://www.npmjs.com/package/jsonschema
