@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "babel-node index.js"
+    "start": "babel-node index.js --runTest",
+    "start:perf": "babel-node index.js --runPerfTest"
   },
   "author": "",
   "license": "ISC",
