@@ -4,15 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "babel-node index.js --runTest",
-    "start:perf": "babel-node index.js --runPerfTest"
+    "start": "babel-node index.js runTest",
+    "start:perf": "babel-node index.js runPerfTest"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "jsonschema": "^1.2.4",
     "superstruct": "^0.8.2",
-    "validate": "^5.1.0"
+    "validate": "^5.1.0",
+    "yup": "^0.27.0"
   },
   "devDependencies": {
     "@babel/core": "^7.6.4",

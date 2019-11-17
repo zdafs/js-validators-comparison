@@ -1,17 +1,14 @@
-import { runTest, runPerfTest } from './validatorsTest';
+import * as tests from './validatorsTest';
 
-const testType = process.argv[2].replace('--', '');
+const testType = process.argv[2];
 
-const tests = {
-  runTest: () => runTest(),
-  runPerfTest: () => {
-    const iterations = !Number.isNaN(process.argv[3]) ? Number(process.argv[3]) : 10;
-    runPerfTest(iterations);
-  },
+const testsParams = {
+  runTest: [],
+  runPerfTest: !Number.isNaN(Number(process.argv[3])) ? [Number(process.argv[3])] : [10],
 };
 
 if (tests[testType] === undefined) {
   console.log(`There is no ${process.argv[2]} option.`);
 } else {
-  tests[testType]();
+  tests[testType](...testsParams[testType]);
 }
