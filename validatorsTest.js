@@ -3,6 +3,7 @@ import { superstructTemporaryBlocksValidator } from './validators/superstruct-te
 import { validateTemporaryBlocksValidator } from './validators/validate-test';
 import { jsonschemaTemporaryBlocksValidator } from './validators/jsonschema-test';
 import { yupTemporaryBlocksValidator } from './validators/yup-test';
+import { joiTemporaryBlocksValidator } from './validators/joi-test';
 
 const getTimeResult = (validationFunc) => {
   const hrStart = process.hrtime.bigint();
@@ -32,12 +33,14 @@ const superstructParams = ['superstruct', superstructTemporaryBlocksValidator, (
 const validateParams = ['validate', validateTemporaryBlocksValidator, (res) => res.length === 0];
 const jsonschemaParams = ['jsonschema', jsonschemaTemporaryBlocksValidator, ({ errors }) => errors.length === 0];
 const yupParams = ['yup', yupTemporaryBlocksValidator, (res) => res];
+const joiParams = ['joi', joiTemporaryBlocksValidator, (res) => res.error === undefined]
 
 const testParams = [
   superstructParams,
   validateParams,
   jsonschemaParams,
   yupParams,
+  joiParams,
 ];
 
 export const runTest = () => testParams.forEach((param) => test(...param));
