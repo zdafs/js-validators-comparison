@@ -7,3 +7,4 @@ Comparison between multiple js object validators
 - JsonSchema: https://www.npmjs.com/package/jsonschema
 - Yup: https://www.npmjs.com/package/yup
 - Joi: https://www.npmjs.com/package/@hapi/joi
+- Ajv: https://www.npmjs.com/package/ajv
