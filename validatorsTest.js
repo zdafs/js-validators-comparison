@@ -4,6 +4,7 @@ import { validateTemporaryBlocksValidator } from './validators/validate-test';
 import { jsonschemaTemporaryBlocksValidator } from './validators/jsonschema-test';
 import { yupTemporaryBlocksValidator } from './validators/yup-test';
 import { joiTemporaryBlocksValidator } from './validators/joi-test';
+import { ajvTemporaryBlocksValidator } from './validators/ajv-test';
 
 const getTimeResult = (validationFunc) => {
   const hrStart = process.hrtime.bigint();
@@ -34,6 +35,7 @@ const validateParams = ['validate', validateTemporaryBlocksValidator, (res) => r
 const jsonschemaParams = ['jsonschema', jsonschemaTemporaryBlocksValidator, ({ errors }) => errors.length === 0];
 const yupParams = ['yup', yupTemporaryBlocksValidator, (res) => res];
 const joiParams = ['joi', joiTemporaryBlocksValidator, (res) => res.error === undefined]
+const ajvParams = ['ajv', ajvTemporaryBlocksValidator, (res) => res];
 
 const testParams = [
   superstructParams,
@@ -41,6 +43,7 @@ const testParams = [
   jsonschemaParams,
   yupParams,
   joiParams,
+  ajvParams,
 ];
 
 export const runTest = () => testParams.forEach((param) => test(...param));
