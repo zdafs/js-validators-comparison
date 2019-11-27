@@ -3,4 +3,6 @@ import { temporaryBlockSchema } from './TemporaryBlock';
 
 const temporaryBlocksArraySchema = array().of(temporaryBlockSchema).strict();
 
-export const yupTemporaryBlocksValidator = (temporaryBlocks) => temporaryBlocksArraySchema.isValidSync(temporaryBlocks);
+export const yupTemporaryBlocksValidator = (temporaryBlocks) => (
+  temporaryBlocksArraySchema.isValidSync(temporaryBlocks)
+);

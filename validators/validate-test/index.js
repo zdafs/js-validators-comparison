@@ -1,4 +1,8 @@
 import Schema from 'validate';
 import { TemporaryBlock } from './TemporaryBlock';
 
-export const validateTemporaryBlocksValidator = (temporaryBlocks) => new Schema({ payload: [TemporaryBlock] }).validate({ payload: temporaryBlocks });
+const v = new Schema({ payload: [TemporaryBlock] });
+
+export const validateTemporaryBlocksValidator = (temporaryBlocks) => (
+  v.validate({ payload: temporaryBlocks })
+);

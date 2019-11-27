@@ -8,4 +8,6 @@ const v = new Validator();
 v.addSchema(intervalSchema, intervalSchema.id);
 v.addSchema(temporaryBlockSchema, temporaryBlockSchema.id);
 
-export const jsonschemaTemporaryBlocksValidator = (temporaryBlocks) => v.validate(temporaryBlocks, temporaryBlocksArraySchema);
+export const jsonschemaTemporaryBlocksValidator = (temporaryBlocks) => (
+  v.validate(temporaryBlocks, temporaryBlocksArraySchema)
+);
