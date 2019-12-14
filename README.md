@@ -63,7 +63,7 @@ validate result: true
 ...
 ```
 
-The other command you can use is `npm run start:perf <number_of_iterations>`. This command runs each validation function for `number_of_iterations` times and calculates the average execution time of the function. If no `number_of_iterations` argument is passed the value defaults to 10. The output is something like:
+The other command you can use is `npm run start:perf <number_of_iterations> <number_of_entries_in_payload>`. This command generates a random payload with `number_of_entries_in_payload` entries, runs each validation function for `number_of_iterations` times and calculates the average execution time of each function. If no `number_of_iterations` or `number_of_entries_in_payload` argument is provided the value defaults to 10 and 100 respectively. The generated payload is saved in the `randPayload.json` file. The output is something like:
 
 ```
 superstruct time: 0.052601160000000015 ms
