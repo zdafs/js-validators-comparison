@@ -11,7 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "@hapi/joi": "^16.1.7",
-    "ajv": "^6.10.2",
+    "ajv": "^6.12.3",
     "jsonschema": "^1.2.4",
     "superstruct": "^0.8.2",
     "validate": "^5.1.0",
